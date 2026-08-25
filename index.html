@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="EPIC Lookup - Search electoral roll information by EPIC number.">
+
+    <title>EPIC Lookup</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+
+<body>
+
+    <main class="app">
+
+
+        <!-- =================================================
+             IMPORTANT DISCLAIMER
+             ================================================= -->
+
+        <section id="disclaimer" class="disclaimer">
+
+            <div class="disclaimer-icon">
+                !
+            </div>
+
+
+            <div class="disclaimer-content">
+
+                <h2>
+                    IMPORTANT: VERIFY OFFICIAL RECORD
+                </h2>
+
+
+                <p class="disclaimer-main">
+
+                    The information displayed on this website
+                    has been extracted from electoral-roll PDF
+                    documents using automated OCR and data
+                    processing.
+
+                </p>
+
+
+                <p class="disclaimer-critical">
+
+                    <strong>
+
+                        PLEASE VERIFY THE INFORMATION AGAINST
+                        THE ORIGINAL OFFICIAL ELECTORAL-ROLL PDF
+                        FOR THE SPECIFIC PART NUMBER SHOWN IN
+                        YOUR SEARCH RESULT BEFORE RELYING ON IT.
+
+                    </strong>
+
+                </p>
+
+
+                <p class="disclaimer-note">
+
+                    OCR and automated processing may contain
+                    errors. This website is provided as a lookup
+                    convenience and is not a replacement for
+                    the original official electoral-roll
+                    document.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SEARCH CARD
+             ================================================= -->
+
+        <section class="search-card">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    E
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        EPIC Lookup
+                    </h1>
+
+                    <p>
+                        Search electoral roll information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH FORM -->
+
+            <form id="searchForm">
+
+
+                <label for="epicInput">
+                    EPIC Number
+                </label>
+
+
+                <div class="search-row">
+
+                    <input id="epicInput" type="text" placeholder="Enter EPIC number" autocomplete="off"
+                        autocapitalize="characters" spellcheck="false" maxlength="20" aria-label="EPIC Number">
+
+
+                    <button id="searchButton" type="submit">
+                        Search
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+
+            <!-- CLEAR -->
+
+            <button id="clearButton" class="clear-button" type="button">
+                Clear
+            </button>
+
+
+
+            <!-- =================================================
+                 CREATOR CREDIT
+                 ================================================= -->
+
+            <div class="creator-credit">
+
+                <span class="creator-label">
+                    WEBSITE CREATED BY
+                </span>
+
+
+                <a href="https://www.linkedin.com/in/nooruddinsaheb/" target="_blank" rel="noopener noreferrer"
+                    class="creator-name">
+                    Nooruddin Saheb
+                </a>
+
+
+                <span class="creator-subtitle">
+                    EPIC Lookup
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATUS
+             ================================================= -->
+
+        <section id="status" class="status hidden" aria-live="polite"></section>
+
+
+
+        <!-- =================================================
+             RESULT CARD
+             ================================================= -->
+
+        <section id="resultCard" class="result-card hidden">
+
+
+            <div class="result-header">
+
+
+                <div>
+
+                    <span class="result-label">
+                        EPIC NUMBER
+                    </span>
+
+
+                    <h2 id="resultEpic">
+                    </h2>
+
+                </div>
+
+
+                <div class="part-number-box">
+
+    <span class="part-number-label">
+        PART NUMBER
+    </span>
+
+    <strong
+        id="resultPart"
+        class="part-number-value"
+    >
+    </strong>
+
+</div>
+
+
+            </div>
+
+
+
+            <div class="result-grid">
+
+
+                <!-- NAME -->
+
+                <div class="result-item">
+
+                    <span>
+                        Name
+                    </span>
+
+                    <strong id="resultName">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- RELATIVE -->
+
+                <div class="result-item">
+
+                    <span>
+                        Relative Name
+                    </span>
+
+                    <strong id="resultRelative">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- RELATION -->
+
+                <div class="result-item">
+
+                    <span>
+                        Relation
+                    </span>
+
+                    <strong id="resultRelation">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SERIAL -->
+
+                <div class="result-item">
+
+                    <span>
+                        Serial Number
+                    </span>
+
+                    <strong id="resultSerial">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- AGE -->
+
+                <div class="result-item">
+
+                    <span>
+                        Age
+                    </span>
+
+                    <strong id="resultAge">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- GENDER -->
+
+                <div class="result-item">
+
+                    <span>
+                        Gender
+                    </span>
+
+                    <strong id="resultGender">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- HOUSE -->
+
+                <div class="result-item">
+
+                    <span>
+                        House Number
+                    </span>
+
+                    <strong id="resultHouse">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        EPIC Lookup
+
+    </footer>
+
+
+
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
